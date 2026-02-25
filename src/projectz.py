@@ -126,14 +126,14 @@ class Client(WebSocket):
 		path = f"/v1/circles?type=recommend&size={size}"
 		if page_token:
 			path = f"{path}&pageToken={page_token}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_my_circles(self, size: int = 10, page_token: str = None) -> dict:
 		path = f"/v1/circles?type=joined&categoryId=0&size={size}"
 		if page_token:
 			path = f"{path}&pageToken={page_token}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_circle_chats(
@@ -146,12 +146,12 @@ class Client(WebSocket):
 		path = f"/v1/chat/threads?type=circle&objectId={circle_id}&size={size}",
 		if page_token:
 			path = f"{path}&pageToken={page_token}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_circle_info(self, circle_id: int) -> dict:
 		path = f"/v1/circles/{circle_id}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_link_info(self, link: str) -> dict:
@@ -163,22 +163,22 @@ class Client(WebSocket):
 
 	def join_circle(self, circle_id: int) -> dict:
 		path = f"/v1/circles/{circle_id}/members"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.post(f"{self.api}{path}").json()
 
 	def leave_circle(self, circle_id: int) -> dict:
 		path = f"/v1/circles/{circle_id}/members"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.delete(f"{self.api}{path}").json()
 
 	def join_chat(self, chat_id: int) -> dict:
 		path = f"/v1/chat/threads/{chat_id}/members"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.post(f"{self.api}{path}").json()
 
 	def leave_chat(self, chat_id: int) -> dict:
 		path = f"/v1/chat/threads/{chat_id}/members"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.delete(f"{self.api}{path}").json()
 
 	def request_security_validation(self, email: str) -> dict:
@@ -201,7 +201,7 @@ class Client(WebSocket):
 		path = f"/v1/chat/threads/{chat_id}/messages?size={size}"
 		if page_token:
 			path = f"{path}&pageToken={page_token}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_joined_chats(
@@ -210,7 +210,7 @@ class Client(WebSocket):
 			size: int = 10,
 			chats_type: str = "all") -> dict:
 		path = f"/v1/chat/joined-threads?start={start}&size={size}&type={chats_type}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def check_security_validation(self, email: str, code: str) -> dict:
@@ -232,17 +232,17 @@ class Client(WebSocket):
 		path = f"/v1/circles/{circle_id}/members?type={type}&size={size}"
 		if page_token:
 			path = f"{path}&pageToken={page_token}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_circle_admins(self, circle_id: int) -> dict:
 		path = f"/v1/circles/{circle_id}/management-team"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_recommended_users(self) -> dict:
 		path = "/v1/onboarding/recommend-users"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def get_circle_active_users(
@@ -253,12 +253,12 @@ class Client(WebSocket):
 		path = f"/v1/circles/{circle_id}/active-members?size={size}"
 		if page_token:
 			path = f"{path}&pageToken={page_token}"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.get(f"{self.api}{path}").json()
 
 	def visit_profile(self, user_id: int) -> dict:
 		path = f"/v1/user/profile/{user_id}/visit"
-		self._sign(path=path, body={})
+		self._sign(path=path, body=b"")
 		return self.session.post(f"{self.api}{path}").json()
 
 	def start_chat(
