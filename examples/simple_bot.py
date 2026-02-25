@@ -1,10 +1,12 @@
-import projectz
+from projectz import Client
 
-projectz = projectz.Client()
-projectz.login(email="", password="")
+projectz = Client()
+projectz.login(email="example@gmail.com", password="password")
 
-projectz.send_message(p.get_joined_chats()["list"][0]["threadId"], "Welcome")
+chat_id = projectz.get_joined_chats()["list"][0]["threadId"]
+projectz.send_message(chat_id=chat_id, content="Welcome")
 
-@p.on()
+@projectz.on()
 def event(data):
-    projectz.send_message(data["msg"]["threadId"], f"Hello {data['author']['nickname']}")
+    projectz.send_message(
+    	data["msg"]["threadId"], f"Hello {data['author']['nickname']}")
