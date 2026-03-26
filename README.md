@@ -1,10 +1,23 @@
-# projectz.py
+<h1 align="center">
+  <img src="https://play-lh.googleusercontent.com/l85wmjBOqRAwoDaKKO4_aEwjBSZnLTXS52FvlB-yW4Tmp9b48geIM3xcZbBVzNsNQxE" width="28" style="vertical-align:middle;" />
+  projectz.py
+</h1>
 
-Mobile-API for the [ProjectZ](https://play.google.com/store/apps/details?id=com.projz.z.android) social network.
+<div align="center">
+    <blockquote>Mobile-API for the <a href="https://play.google.com/store/apps/details?id=com.projz.z.android">ProjectZ</a> social network.</blockquote>
+</div>
 
-> Developed by [vraestoren](https://github.com/vraestoren) & [Zakovskiy](https://github.com/Zakovskiy)
-
----
+<table align="center">
+  <tr><th colspan="2">Developers</th></tr>
+  <tr>
+    <td align="center"><img src="https://github.com/Zakovskiy.png?size=100" width=100></td>
+    <td align="center"><img src="https://github.com/vraestoren.png?size=100" width=100></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Zakovskiy">Zakovskiy</a></td>
+    <td align="center"><a href="https://github.com/vraestoren">vraestoren</a></td>
+  </tr>
+</table>
 
 ## Quick Start
 
